@@ -1,0 +1,17 @@
+name: Build and Deploy to Cloud Run (all branches)
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  call-build-and-deploy:
+    uses: cmauec/Deploy-CloudRun/.github/workflows/build-and-deploy-cloud-run.yml@main
+    with:
+      gcp_region: us-central1
+      gcp_application: ${{ vars.GCP_APPLICATION}}
+      gcp_project: ${{ vars.GCP_PROJECT }}
+      image_tag: ${{ github.sha }}
+    secrets:
+      gcp_credentials: ${{ secrets.GCP_CREDENTIALS }}

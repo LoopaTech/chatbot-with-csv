@@ -1,0 +1,28 @@
+# Ignore git and version control
+.git
+.gitignore
+
+# Ignore Python virtual environment
+venv/
+env/
+__pycache__/
+*.pyc
+
+# Ignore development and IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Ignore logs and temporary files
+*.log
+*.tmp
+
+# Ignore test files
+test/
+tests/
+*_test.py
+
+# Ignore CSV files
+**/db.csv
+**/user_credentials.csv

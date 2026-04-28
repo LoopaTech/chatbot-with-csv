@@ -1,0 +1,16 @@
+steps:
+  # Build image
+  - name: "gcr.io/cloud-builders/docker"
+    args:
+      [
+        "build",
+        "-t",
+        "gcr.io/${GCP_PROJECT}/chatbot-with-csv:${IMAGE_TAG}",
+        "-f",
+        "Dockerfile",
+        ".",
+      ]
+
+# Images to push to Container Registry
+images:
+  - "gcr.io/${GCP_PROJECT}/chatbot-with-csv:${IMAGE_TAG}"
